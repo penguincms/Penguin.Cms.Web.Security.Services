@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Penguin.Cms.Web.Security.Services</name>
+    </assembly>
+    <members>
+        <member name="T:Penguin.Cms.Web.Security.Services.UserService">
+            <summary>
+            This class provides basic CMS methods for managing and interacting with users
+            </summary>
+        </member>
+        <member name="P:Penguin.Cms.Web.Security.Services.UserService.EmailTemplateRepository">
+            <summary>
+            An email template repository
+            </summary>
+        </member>
+        <member name="P:Penguin.Cms.Web.Security.Services.UserService.UserRepository">
+            <summary>
+            A user repository
+            </summary>
+        </member>
+        <member name="P:Penguin.Cms.Web.Security.Services.UserService.AuthenticationTokenRepository">
+            <summary>
+            An IRepository implementation for accessing authentication tokens
+            </summary>
+        </member>
+        <member name="M:Penguin.Cms.Web.Security.Services.UserService.#ctor(Penguin.Cms.Security.Repositories.UserRepository,Penguin.Cms.Mail.Templating.Repositories.EmailTemplateRepository,Penguin.Persistence.Abstractions.Interfaces.IRepository{Penguin.Cms.Web.Security.AuthenticationToken})">
+            <summary>
+            Constructs a new instance of this service
+            </summary>
+            <param name="userRepository">A user repository</param>
+            <param name="emailTemplateRepository">An email template repository</param>
+            <param name="authenticationTokenRepository">An IRepository implementation for accessing authentication tokens</param>
+        </member>
+        <member name="M:Penguin.Cms.Web.Security.Services.UserService.GetByAuthenticationToken(Penguin.Cms.Web.Security.AuthenticationToken)">
+            <summary>
+            Gets a user using any valid authentication token
+            </summary>
+            <param name="token">The token to use to get the user</param>
+            <returns>A user if a the token is valid, otherwise null</returns>
+        </member>
+        <member name="M:Penguin.Cms.Web.Security.Services.UserService.RequestPasswordReset(System.String)">
+            <summary>
+            Returns an authentication token that can be used to reset a password. If email templating is bundled, will send out a password reset email
+            </summary>
+            <param name="Login">The login for the user to request</param>
+            <returns>Returns an authentication token that can be used to reset a password.</returns>
+        </member>
+        <member name="M:Penguin.Cms.Web.Security.Services.UserService.RequestPasswordReset(Penguin.Cms.Security.User,System.Guid)">
+            <summary>
+            Returns an authentication token that can be used to reset a password. If email templating is bundled, will send out a password reset email
+            </summary>
+            <param name="targetUser">The login for the user to request</param>
+            <param name="Token">Parameter only used by email templating system</param>
+            <returns>Returns an authentication token that can be used to reset a password.</returns>
+        </member>
+        <member name="M:Penguin.Cms.Web.Security.Services.UserService.SendLoginInformation(System.String)">
+            <summary>
+            If email templating is enabled, Sends the specified email a message containing the login name of any associated user account 
+            </summary>
+            <param name="Email">The email to send information to</param>
+        </member>
+        <member name="M:Penguin.Cms.Web.Security.Services.UserService.SendLoginInformation(Penguin.Cms.Security.User)">
+            <summary>
+            If email templating is enabled, Sends the specified email a message containing the login name of any associated user account 
+            </summary>
+            <param name="targetUser">The user to send login information to</param>
+        </member>
+    </members>
+</doc>
