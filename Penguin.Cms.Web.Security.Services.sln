@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29306.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Penguin.Cms.Web.Security.Services", "Penguin.Cms.Web.Security.Services.csproj", "{EB4D2B6F-C4A8-46A7-A154-3F4296B76E58}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EB4D2B6F-C4A8-46A7-A154-3F4296B76E58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB4D2B6F-C4A8-46A7-A154-3F4296B76E58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB4D2B6F-C4A8-46A7-A154-3F4296B76E58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB4D2B6F-C4A8-46A7-A154-3F4296B76E58}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {23980679-5951-44E3-A431-182752A322F0}
+	EndGlobalSection
+EndGlobal
