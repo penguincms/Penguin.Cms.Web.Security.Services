@@ -1,38 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
+  <Import Project="Penguin.Projects.Shared\Penguin.Projects.Shared.csproj" />
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <PackageLicenseFile>License.txt</PackageLicenseFile>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageProjectUrl>https://github.com/penguincms/Penguin.Cms.Web.Security.Services</PackageProjectUrl>
     <PackageIconUrl>http://www.penguinms.com/client/images/pg.png</PackageIconUrl>
-    <Version>1.0.2</Version>
-	<IncludeSymbols>true</IncludeSymbols>    
-<SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <Description>None Available</Description>
+    <Version>2.0.0</Version>
   </PropertyGroup>
-
   <ItemGroup>
-    <PackageReference Include="Penguin.Cms.Mail.Templating.Repositories" Version="1.1.2" />
-    <PackageReference Include="Penguin.Cms.Security.Repositories" Version="1.1.1" />
-    <PackageReference Include="Penguin.Cms.Web.Security" Version="1.0.2" />
-    <PackageReference Include="Penguin.DependencyInjection.Abstractions" Version="1.0.5" />
-    <PackageReference Include="Penguin.Mail.Abstractions" Version="1.0.5" />
+    <PackageReference Include="Penguin.Cms.Mail.Templating.Repositories" Version="2.1.0" />
+    <PackageReference Include="Penguin.Cms.Security.Repositories" Version="2.1.0" />
+    <PackageReference Include="Penguin.Cms.Web.Security" Version="2.0.0" />
+    <PackageReference Include="Penguin.DependencyInjection.Abstractions" Version="2.0.0" />
+    <PackageReference Include="Penguin.Mail.Abstractions" Version="2.0.0" />
   </ItemGroup>
-
- <ItemGroup>
-    <None Include="License.txt">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-  </ItemGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <WarningsAsErrors>NU1605, CS1591</WarningsAsErrors>
-    <DocumentationFile>Penguin.Cms.Web.Security.Services.xml</DocumentationFile>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DebugType>full</DebugType>
-    <DocumentationFile>Penguin.Cms.Web.Security.Services.xml</DocumentationFile>
-  </PropertyGroup>
 </Project>
