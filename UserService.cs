@@ -102,7 +102,8 @@ namespace Penguin.Cms.Web.Security.Services
                     token = new AuthenticationToken()
                     {
                         Expiration = DateTime.Now.AddMinutes(30),
-                        User = UserRepository.Find(targetUser._Id).Guid
+                        User = UserRepository.Find(targetUser._Id).Guid,
+                        Guid = Token
                     };
 
                     this.AuthenticationTokenRepository.AddOrUpdate(token);

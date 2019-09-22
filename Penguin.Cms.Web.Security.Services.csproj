@@ -3,7 +3,7 @@
   <PropertyGroup>
     <PackageProjectUrl>https://github.com/penguincms/Penguin.Cms.Web.Security.Services</PackageProjectUrl>
     <PackageIconUrl>http://www.penguinms.com/client/images/pg.png</PackageIconUrl>
-    <Version>2.0.0</Version>
+    <Version>2.0.1</Version>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Penguin.Cms.Mail.Templating.Repositories" Version="2.1.0" />
