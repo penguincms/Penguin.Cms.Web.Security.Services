@@ -3,12 +3,12 @@
   <PropertyGroup>
     <PackageProjectUrl>https://github.com/penguincms/Penguin.Cms.Web.Security.Services</PackageProjectUrl>
     <PackageIconUrl>http://www.penguinms.com/client/images/pg.png</PackageIconUrl>
-    <Version>2.0.1</Version>
+    <Version>2.1.0</Version>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Penguin.Cms.Mail.Templating.Repositories" Version="2.1.0" />
-    <PackageReference Include="Penguin.Cms.Security.Repositories" Version="2.1.0" />
-    <PackageReference Include="Penguin.Cms.Web.Security" Version="2.0.0" />
+    <PackageReference Include="Penguin.Cms.Mail.Templating.Repositories" Version="2.3.0" />
+    <PackageReference Include="Penguin.Cms.Security.Repositories" Version="2.2.0" />
+    <PackageReference Include="Penguin.Cms.Web.Security" Version="2.0.1" />
     <PackageReference Include="Penguin.DependencyInjection.Abstractions" Version="2.0.0" />
     <PackageReference Include="Penguin.Mail.Abstractions" Version="2.0.0" />
   </ItemGroup>
