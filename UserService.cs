@@ -1,13 +1,12 @@
 ﻿using System.Linq;
-using Penguin.Cms.Mail.Templating.Repositories;
 using Penguin.Cms.Security;
-using Penguin.Cms.Security.Repositories;
 using Penguin.DependencyInjection.Abstractions;
 using Penguin.Mail.Abstractions.Attributes;
 using Penguin.Persistence.Abstractions.Interfaces;
 using System;
 using System.Collections.Generic;
 using Penguin.Mail.Abstractions.Interfaces;
+using Penguin.Mail.Abstractions.Extensions;
 
 namespace Penguin.Cms.Web.Security.Services
 {
@@ -19,25 +18,22 @@ namespace Penguin.Cms.Web.Security.Services
         /// <summary>
         /// An email template repository
         /// </summary>
-        protected EmailTemplateRepository EmailTemplateRepository { get; set; }
+        protected ISendTemplates EmailTemplateRepository { get; set; }
 
-        /// <summary>
-        /// A user repository
-        /// </summary>
-        protected UserRepository UserRepository { get; set; }
 
         /// <summary>
         /// An IRepository implementation for accessing authentication tokens
         /// </summary>
         protected IRepository<AuthenticationToken> AuthenticationTokenRepository { get; set; }
 
+        protected IRepository<User> UserRepository { get; set; }
         /// <summary>
         /// Constructs a new instance of this service
         /// </summary>
         /// <param name="userRepository">A user repository</param>
         /// <param name="emailTemplateRepository">An email template repository</param>
         /// <param name="authenticationTokenRepository">An IRepository implementation for accessing authentication tokens</param>
-        public UserService(UserRepository userRepository, EmailTemplateRepository emailTemplateRepository, IRepository<AuthenticationToken> authenticationTokenRepository)
+        public UserService(IRepository<User> userRepository, ISendTemplates emailTemplateRepository, IRepository<AuthenticationToken> authenticationTokenRepository)
         {
             UserRepository = userRepository;
             EmailTemplateRepository = emailTemplateRepository;
@@ -89,7 +85,7 @@ namespace Penguin.Cms.Web.Security.Services
 
                 Token = Guid.NewGuid();
 
-                this.EmailTemplateRepository.GenerateEmailFromTemplate(new Dictionary<string, object>()
+                this.EmailTemplateRepository.TrySendTemplate(new Dictionary<string, object>()
                 {
                     [nameof(targetUser)] = targetUser,
                     [nameof(Token)] = Token

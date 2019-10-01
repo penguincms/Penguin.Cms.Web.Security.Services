@@ -14,17 +14,12 @@
             An email template repository
             </summary>
         </member>
-        <member name="P:Penguin.Cms.Web.Security.Services.UserService.UserRepository">
-            <summary>
-            A user repository
-            </summary>
-        </member>
         <member name="P:Penguin.Cms.Web.Security.Services.UserService.AuthenticationTokenRepository">
             <summary>
             An IRepository implementation for accessing authentication tokens
             </summary>
         </member>
-        <member name="M:Penguin.Cms.Web.Security.Services.UserService.#ctor(Penguin.Cms.Security.Repositories.UserRepository,Penguin.Cms.Mail.Templating.Repositories.EmailTemplateRepository,Penguin.Persistence.Abstractions.Interfaces.IRepository{Penguin.Cms.Web.Security.AuthenticationToken})">
+        <member name="M:Penguin.Cms.Web.Security.Services.UserService.#ctor(Penguin.Persistence.Abstractions.Interfaces.IRepository{Penguin.Cms.Security.User},Penguin.Mail.Abstractions.Interfaces.ISendTemplates,Penguin.Persistence.Abstractions.Interfaces.IRepository{Penguin.Cms.Web.Security.AuthenticationToken})">
             <summary>
             Constructs a new instance of this service
             </summary>
