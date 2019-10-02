@@ -1,12 +1,12 @@
 ﻿using System.Linq;
 using Penguin.Cms.Security;
-using Penguin.DependencyInjection.Abstractions;
 using Penguin.Mail.Abstractions.Attributes;
 using Penguin.Persistence.Abstractions.Interfaces;
 using System;
 using System.Collections.Generic;
 using Penguin.Mail.Abstractions.Interfaces;
 using Penguin.Mail.Abstractions.Extensions;
+using Penguin.DependencyInjection.Abstractions.Interfaces;
 
 namespace Penguin.Cms.Web.Security.Services
 {
