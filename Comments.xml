@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>Penguin.Cms.Web.Security.Services</name>
+        <name>Penguin.Cms.Web.Security.Services.Local</name>
     </assembly>
     <members>
         <member name="T:Penguin.Cms.Web.Security.Services.UserService">
@@ -19,7 +19,7 @@
             An IRepository implementation for accessing authentication tokens
             </summary>
         </member>
-        <member name="M:Penguin.Cms.Web.Security.Services.UserService.#ctor(Penguin.Persistence.Abstractions.Interfaces.IRepository{Penguin.Cms.Security.User},Penguin.Mail.Abstractions.Interfaces.ISendTemplates,Penguin.Persistence.Abstractions.Interfaces.IRepository{Penguin.Cms.Web.Security.AuthenticationToken})">
+        <member name="M:Penguin.Cms.Web.Security.Services.UserService.#ctor(Penguin.Persistence.Abstractions.Interfaces.IRepository{Penguin.Cms.Security.User},Penguin.Mail.Abstractions.Interfaces.ISendTemplates,Penguin.Persistence.Abstractions.Interfaces.IRepository{Penguin.Cms.Security.AuthenticationToken})">
             <summary>
             Constructs a new instance of this service
             </summary>
@@ -27,7 +27,7 @@
             <param name="emailTemplateRepository">An email template repository</param>
             <param name="authenticationTokenRepository">An IRepository implementation for accessing authentication tokens</param>
         </member>
-        <member name="M:Penguin.Cms.Web.Security.Services.UserService.GetByAuthenticationToken(Penguin.Cms.Web.Security.AuthenticationToken)">
+        <member name="M:Penguin.Cms.Web.Security.Services.UserService.GetByAuthenticationToken(Penguin.Cms.Security.AuthenticationToken)">
             <summary>
             Gets a user using any valid authentication token
             </summary>
