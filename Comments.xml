@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>Penguin.Cms.Web.Security.Services.Local</name>
+        <name>Penguin.Cms.Web.Security.Services</name>
     </assembly>
     <members>
         <member name="T:Penguin.Cms.Web.Security.Services.UserService">
