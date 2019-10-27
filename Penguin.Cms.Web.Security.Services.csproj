@@ -7,8 +7,7 @@
     <Description>Not Available</Description>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Penguin.DependencyInjection.Abstractions" Version="2.1.5" />
     <PackageReference Include="Penguin.Mail.Abstractions" Version="2.0.5" />
-    <PackageReference Include="Penguin.Cms.Web.Security" Version="3.1.0-63707630128" />
+    <PackageReference Include="Penguin.Cms.Web.Security" Version="3.1.0-T9LXGUJ" />
   </ItemGroup>
 </Project>
