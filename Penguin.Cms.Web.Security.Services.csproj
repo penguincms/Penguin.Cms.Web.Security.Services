@@ -11,6 +11,6 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Penguin.Mail.Abstractions" Version="2.0.5" />
-    <PackageReference Include="Penguin.Cms.Web.Security" Version="5.0.1-TA29X8Y" />
+    <PackageReference Include="Penguin.Cms.Web.Security" Version="5.0.1-TA2MS78" />
   </ItemGroup>
 </Project>
