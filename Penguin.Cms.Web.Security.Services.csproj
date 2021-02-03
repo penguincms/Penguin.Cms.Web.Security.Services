@@ -2,7 +2,7 @@
   <Import Project="Penguin.Projects.Shared\Penguin.Projects.Shared.csproj" />
   <PropertyGroup>
     <PackageProjectUrl>https://github.com/penguincms/Penguin.Cms.Web.Security.Services</PackageProjectUrl>
-    <Version>5.0.0</Version>
+    <Version>5.0.1</Version>
     <TargetFramework>netstandard2.1</TargetFramework>
     <Description>Not Available</Description>
     <AssemblyName>Penguin.Cms.Web.Security.Services</AssemblyName>
@@ -11,6 +11,6 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Penguin.Mail.Abstractions" Version="2.0.5" />
-    <PackageReference Include="Penguin.Cms.Web.Security" Version="5.0.1-TA99DVY" />
+    <PackageReference Include="Penguin.Cms.Web.Security" Version="5.0.2-TA9KKLU" />
   </ItemGroup>
 </Project>
