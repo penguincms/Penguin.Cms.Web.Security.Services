@@ -1,25 +1,34 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.29306.81
+VisualStudioVersion = 16.6.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Penguin.Cms.Web.Security.Services", "Penguin.Cms.Web.Security.Services.csproj", "{EB4D2B6F-C4A8-46A7-A154-3F4296B76E58}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Penguin.Cms.Web.Security.Services", "Penguin.Cms.Web.Security.Services.csproj", "{08B3AE80-DB13-41A4-8791-DDF2B09477AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EB4D2B6F-C4A8-46A7-A154-3F4296B76E58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EB4D2B6F-C4A8-46A7-A154-3F4296B76E58}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EB4D2B6F-C4A8-46A7-A154-3F4296B76E58}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EB4D2B6F-C4A8-46A7-A154-3F4296B76E58}.Release|Any CPU.Build.0 = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {23980679-5951-44E3-A431-182752A322F0}
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{08B3AE80-DB13-41A4-8791-DDF2B09477AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08B3AE80-DB13-41A4-8791-DDF2B09477AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08B3AE80-DB13-41A4-8791-DDF2B09477AB}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{08B3AE80-DB13-41A4-8791-DDF2B09477AB}.Debug|x64.Build.0 = Debug|Any CPU
+		{08B3AE80-DB13-41A4-8791-DDF2B09477AB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{08B3AE80-DB13-41A4-8791-DDF2B09477AB}.Debug|x86.Build.0 = Debug|Any CPU
+		{08B3AE80-DB13-41A4-8791-DDF2B09477AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08B3AE80-DB13-41A4-8791-DDF2B09477AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08B3AE80-DB13-41A4-8791-DDF2B09477AB}.Release|x64.ActiveCfg = Release|Any CPU
+		{08B3AE80-DB13-41A4-8791-DDF2B09477AB}.Release|x64.Build.0 = Release|Any CPU
+		{08B3AE80-DB13-41A4-8791-DDF2B09477AB}.Release|x86.ActiveCfg = Release|Any CPU
+		{08B3AE80-DB13-41A4-8791-DDF2B09477AB}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
