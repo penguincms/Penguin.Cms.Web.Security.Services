@@ -1,4 +1,4 @@
-﻿using System.Linq;
+using System.Linq;
 using Penguin.Cms.Security;
 using Penguin.Mail.Abstractions.Attributes;
 using Penguin.Persistence.Abstractions.Interfaces;
@@ -19,7 +19,6 @@ namespace Penguin.Cms.Web.Security.Services
         /// An email template repository
         /// </summary>
         protected ISendTemplates EmailTemplateRepository { get; set; }
-
 
         /// <summary>
         /// An IRepository implementation for accessing authentication tokens
@@ -61,7 +60,6 @@ namespace Penguin.Cms.Web.Security.Services
         /// <param name="Login">The login for the user to request</param>
         /// <returns>Returns an authentication token that can be used to reset a password.</returns>
         public AuthenticationToken RequestPasswordReset(string Login) => this.RequestPasswordReset(UserRepository.Find(Login), Guid.Empty);
-
 
         /// <summary>
         /// Returns an authentication token that can be used to reset a password. If email templating is bundled, will send out a password reset email
