@@ -51,13 +51,13 @@
         </member>
         <member name="M:Penguin.Cms.Web.Security.Services.UserService.SendLoginInformation(System.String)">
             <summary>
-            If email templating is enabled, Sends the specified email a message containing the login name of any associated user account 
+            If email templating is enabled, Sends the specified email a message containing the login name of any associated user account
             </summary>
             <param name="Email">The email to send information to</param>
         </member>
         <member name="M:Penguin.Cms.Web.Security.Services.UserService.SendLoginInformation(Penguin.Cms.Security.User)">
             <summary>
-            If email templating is enabled, Sends the specified email a message containing the login name of any associated user account 
+            If email templating is enabled, Sends the specified email a message containing the login name of any associated user account
             </summary>
             <param name="targetUser">The user to send login information to</param>
         </member>

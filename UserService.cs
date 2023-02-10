@@ -1,12 +1,12 @@
-using System.Linq;
 using Penguin.Cms.Security;
+using Penguin.DependencyInjection.Abstractions.Interfaces;
 using Penguin.Mail.Abstractions.Attributes;
+using Penguin.Mail.Abstractions.Extensions;
+using Penguin.Mail.Abstractions.Interfaces;
 using Penguin.Persistence.Abstractions.Interfaces;
 using System;
 using System.Collections.Generic;
-using Penguin.Mail.Abstractions.Interfaces;
-using Penguin.Mail.Abstractions.Extensions;
-using Penguin.DependencyInjection.Abstractions.Interfaces;
+using System.Linq;
 
 namespace Penguin.Cms.Web.Security.Services
 {
@@ -26,6 +26,7 @@ namespace Penguin.Cms.Web.Security.Services
         protected IRepository<AuthenticationToken> AuthenticationTokenRepository { get; set; }
 
         protected IRepository<User> UserRepository { get; set; }
+
         /// <summary>
         /// Constructs a new instance of this service
         /// </summary>
@@ -46,12 +47,9 @@ namespace Penguin.Cms.Web.Security.Services
         /// <returns>A user if a the token is valid, otherwise null</returns>
         public User GetByAuthenticationToken(AuthenticationToken token)
         {
-            if (this.AuthenticationTokenRepository.Where(t => t.User == token.User && t.Guid == token.Guid && t.Expiration > DateTime.Now).Any())
-            {
-                return UserRepository.Where(u => u.Guid == token.User).FirstOrDefault();
-            }
-
-            return null;
+            return AuthenticationTokenRepository.Where(t => t.User == token.User && t.Guid == token.Guid && t.Expiration > DateTime.Now).Any()
+                ? UserRepository.Where(u => u.Guid == token.User).FirstOrDefault()
+                : null;
         }
 
         /// <summary>
@@ -59,7 +57,10 @@ namespace Penguin.Cms.Web.Security.Services
         /// </summary>
         /// <param name="Login">The login for the user to request</param>
         /// <returns>Returns an authentication token that can be used to reset a password.</returns>
-        public AuthenticationToken RequestPasswordReset(string Login) => this.RequestPasswordReset(UserRepository.Find(Login), Guid.Empty);
+        public AuthenticationToken RequestPasswordReset(string Login)
+        {
+            return RequestPasswordReset(UserRepository.Find(Login), Guid.Empty);
+        }
 
         /// <summary>
         /// Returns an authentication token that can be used to reset a password. If email templating is bundled, will send out a password reset email
@@ -74,7 +75,7 @@ namespace Penguin.Cms.Web.Security.Services
             {
                 string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
                 char[] stringChars = new char[16];
-                Random random = new Random();
+                Random random = new();
 
                 for (int i = 0; i < stringChars.Length; i++)
                 {
@@ -83,7 +84,7 @@ namespace Penguin.Cms.Web.Security.Services
 
                 Token = Guid.NewGuid();
 
-                this.EmailTemplateRepository.TrySendTemplate(new Dictionary<string, object>()
+                EmailTemplateRepository.TrySendTemplate(new Dictionary<string, object>()
                 {
                     [nameof(targetUser)] = targetUser,
                     [nameof(Token)] = Token
@@ -100,7 +101,7 @@ namespace Penguin.Cms.Web.Security.Services
                         Guid = Token
                     };
 
-                    this.AuthenticationTokenRepository.AddOrUpdate(token);
+                    AuthenticationTokenRepository.AddOrUpdate(token);
                 }
 
                 return token;
@@ -110,13 +111,16 @@ namespace Penguin.Cms.Web.Security.Services
         }
 
         /// <summary>
-        /// If email templating is enabled, Sends the specified email a message containing the login name of any associated user account 
+        /// If email templating is enabled, Sends the specified email a message containing the login name of any associated user account
         /// </summary>
         /// <param name="Email">The email to send information to</param>
-        public void SendLoginInformation(string Email) => this.SendLoginInformation(UserRepository.FirstOrDefault(u => u.Email == Email));
+        public void SendLoginInformation(string Email)
+        {
+            SendLoginInformation(UserRepository.FirstOrDefault(u => u.Email == Email));
+        }
 
         /// <summary>
-        /// If email templating is enabled, Sends the specified email a message containing the login name of any associated user account 
+        /// If email templating is enabled, Sends the specified email a message containing the login name of any associated user account
         /// </summary>
         /// <param name="targetUser">The user to send login information to</param>
         [EmailHandler("Request Login")]
@@ -124,7 +128,7 @@ namespace Penguin.Cms.Web.Security.Services
         {
             if (targetUser != null)
             {
-                this.EmailTemplateRepository.GenerateEmailFromTemplate(new Dictionary<string, object>()
+                EmailTemplateRepository.GenerateEmailFromTemplate(new Dictionary<string, object>()
                 {
                     [nameof(targetUser)] = targetUser
                 });
